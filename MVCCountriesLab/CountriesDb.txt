@@ -1,2 +1,2 @@
-﻿USA,North_America,Red White blue
+﻿USA,North_America,Red White Blue
 Canada,North_America,Red White

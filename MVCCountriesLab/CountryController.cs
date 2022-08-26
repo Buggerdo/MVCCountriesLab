@@ -2,7 +2,7 @@
 {
     public class CountryController
     {
-        string filePath = "Countries.txt";
+        string filePath = "CountriesDb.txt";
 
         public CountryController()
         {
@@ -32,6 +32,9 @@
             country.Display();
         }
 
+        /// <summary>
+        /// Welcome menu
+        /// </summary>
         public void WelcomeAction()
         {
             Console.Clear();
@@ -42,6 +45,10 @@
             CountryAction(CountryDb[index - 1]);
         }
 
+        /// <summary>
+        /// Gets the user selection
+        /// </summary>
+        /// <returns></returns>
         public int GetSelection()
         {
             do
