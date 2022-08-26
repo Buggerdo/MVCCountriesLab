@@ -3,11 +3,18 @@
     public class CountryController
     {
 
-        public CountryController()
+        private CountryController()
         {
             LoadCountries();
             CountryDb = CountryDb.OrderBy(c => c.Name).ToList();
         }
+
+        public static CountryController GetController()
+        {
+            return _countryController;
+        }
+
+        private static CountryController _countryController = new();
 
         List<Country> CountryDb = new();
   

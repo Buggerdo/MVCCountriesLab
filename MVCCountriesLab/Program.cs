@@ -4,7 +4,7 @@
     {
         static void Main()
         {
-            CountryController countryController = new();
+            CountryController countryController = CountryController.GetController();
             do
             {
                 countryController.WelcomeAction();
