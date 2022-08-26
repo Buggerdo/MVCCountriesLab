@@ -4,7 +4,8 @@
     {
         static void Main()
         {
-            Console.WriteLine(Continent.NorthAmerica);
+            CountryController countryController = new();
+            countryController.WelcomeAction();
         }
     }
 }
