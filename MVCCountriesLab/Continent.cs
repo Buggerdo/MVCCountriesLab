@@ -6,10 +6,8 @@ namespace MVCCountriesLab
     {
         Asia,
         Africa,
-        [Display(Name = "North America")]
-        NorthAmerica,
-        [Display(Name = "South America")]
-        SouthAmerica,
+        North_America,
+        South_America,
         Antarctica,
         Europe,
         Australia
