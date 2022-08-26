@@ -6,6 +6,7 @@
         public CountryController()
         {
             LoadCountries();
+            CountryDb = CountryDb.OrderBy(c => c.Name).ToList();
         }
 
         List<Country> CountryDb = new();
@@ -44,8 +45,7 @@
             CountryListView countryListView = new(CountryDb);
             Console.WriteLine("Hello, welcome to the country app.");
             countryListView.Display();
-            int index = GetSelection();
-            CountryAction(CountryDb[index - 1]);
+            CountryAction(CountryDb[GetSelection()]);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@
             {
                 Console.Write("Please select a country from the above list: ");
                 if(int.TryParse(Console.ReadLine(), out int index) && index < CountryDb.Count + 1 && index > 0)
-                    return index;
+                    return --index;
                 Console.WriteLine("Sorry that is not a valid section.");
             } while(true);
         }

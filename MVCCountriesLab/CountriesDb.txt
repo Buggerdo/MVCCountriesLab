@@ -1,2 +1,9 @@
 ﻿USA,North_America,Red White Blue
 Canada,North_America,Red White
+Andorra,Europe,Blue Yellow Red
+Argentina,South_America,Cyan White
+Australia,Australia,Blue Red White
+Brazil,South_America,Green Yellow Blue
+Costa Rica,North_America,Red White Blue
+China,Asia,Red Yellow
+Cameroon,Africa,Green Red Yellow

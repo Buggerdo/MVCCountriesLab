@@ -16,12 +16,12 @@
         public void Display()
         {
             Console.Clear();
-            Console.ForegroundColor = NextColor();
-            Console.WriteLine($"{DisplayCountry.Name}");
-            Console.ForegroundColor = NextColor();
-            Console.WriteLine($"{DisplayCountry.Continent.ToString().Replace('_', ' ')}");
-            Console.ForegroundColor = NextColor();
-            Console.WriteLine($"{string.Join(", ", DisplayCountry.Colors)}");
+            NextColor();
+            Console.WriteLine($"Country:     {DisplayCountry.Name}");
+            NextColor();
+            Console.WriteLine($"Continent:   {DisplayCountry.Continent.ToString().Replace('_', ' ')}");
+            NextColor();
+            Console.WriteLine($"Flag colors: {string.Join(", ", DisplayCountry.Colors)}");
             Console.ResetColor();
         }
 
@@ -29,11 +29,11 @@
         /// Get the next color from the country color
         /// </summary>
         /// <returns></returns>
-        private ConsoleColor NextColor()
+        private void NextColor()
         {
             if(currentColor < DisplayCountry.Colors.Count - 1) currentColor++;
             else currentColor = 0;
-            return (ConsoleColor)Enum.Parse(typeof(ConsoleColor), DisplayCountry.Colors[currentColor]);
+            Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), DisplayCountry.Colors[currentColor]);
         }
     }
 }
