@@ -5,7 +5,10 @@
         static void Main()
         {
             CountryController countryController = new();
-            countryController.WelcomeAction();
+            do
+            {
+                countryController.WelcomeAction(); 
+            } while(Validator.Continue());
         }
     }
 }
