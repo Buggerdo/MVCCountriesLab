@@ -5,7 +5,7 @@
         List<Country> CountryDb = new()
         {
             new Country("USA", "North America",new List<string> {"Red", "White", "blue" }),
-            new Country("Canada", "North America",new List<string> {"Red", "White", "blue" })
+            new Country("Canada", "North America",new List<string> {"Red", "White" })
         };
 
         public void CountryAction(Country c)
@@ -20,7 +20,7 @@
         {
             CountryListView countryListView = new(CountryDb);
             Console.WriteLine("Hello, welcome to the country app. Please select a country from the following list:");
-            countryListView.Display();           
+            countryListView.Display();        
         }
 
         public int GetSelection()

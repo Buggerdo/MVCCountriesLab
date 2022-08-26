@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="MVCCountriesLab.Program" Collapsed="true">
-    <Position X="8" Y="2" Width="1.5" />
+    <Position X="4.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MVCCountriesLab.Country">
-    <Position X="5.5" Y="4.25" Width="1.5" />
+  <Class Name="MVCCountriesLab.Country" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAgAAAAAA=</HashCode>
       <FileName>Country.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MVCCountriesLab.CountryView">
-    <Position X="3.75" Y="3.25" Width="1.5" />
+  <Class Name="MVCCountriesLab.CountryView" Collapsed="true">
+    <Position X="3" Y="3" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
@@ -24,22 +24,22 @@
       <FileName>CountryView.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MVCCountriesLab.CountryListView">
-    <Position X="3" Y="5.25" Width="1.5" />
+  <Class Name="MVCCountriesLab.CountryListView" Collapsed="true">
+    <Position X="6.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CountryListView.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MVCCountriesLab.CountryController">
-    <Position X="9.75" Y="5.75" Width="1.5" />
+  <Class Name="MVCCountriesLab.CountryController" Collapsed="true">
+    <Position X="4.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAABIAAAAAAA=</HashCode>
       <FileName>CountryController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="MVCCountriesLab.Continent">
-    <Position X="12" Y="2.25" Width="1.5" />
+  <Enum Name="MVCCountriesLab.Continent" Collapsed="true">
+    <Position X="3" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAABAAgAAAAoAgAAAAAAAEAAAA=</HashCode>
       <FileName>Continent.cs</FileName>
