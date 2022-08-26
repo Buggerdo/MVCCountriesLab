@@ -2,11 +2,29 @@
 {
     public class CountryController
     {
-        List<Country> CountryDb = new()
+        string filePath = "Countries.txt";
+
+        public CountryController()
         {
-            new Country("USA", Continent.North_America,new List<string> {"Red", "White", "blue" }),
-            new Country("Canada", Continent.North_America,new List<string> {"Red", "White" })
-        };
+            LoadCountries();
+        }
+
+        List<Country> CountryDb = new();
+            //new Country("USA", Continent.North_America,new List<string> {"Red", "White", "blue" }),
+            //new Country("Canada", Continent.North_America,new List<string> {"Red", "White" })
+
+
+        //load the countries from the file into the CountryDb list
+        public void LoadCountries()
+        {
+            StreamReader sr = new(filePath);
+            while(!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                string[] columns = line.Split(',');
+                CountryDb.Add(new Country(columns[0], (Continent)Enum.Parse(typeof(Continent), columns[1]), columns[2].Split(' ').ToList()));
+            }
+        }
 
         public void CountryAction(Country c)
         {
@@ -16,6 +34,7 @@
 
         public void WelcomeAction()
         {
+            Console.Clear();
             CountryListView countryListView = new(CountryDb);
             Console.WriteLine("Hello, welcome to the country app.");
             countryListView.Display();
@@ -34,6 +53,5 @@
                 Console.WriteLine("Sorry that is not a valid section.");
             } while(true);
         }
-
     }
 }
