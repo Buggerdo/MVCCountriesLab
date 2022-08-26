@@ -7,7 +7,7 @@
             CountryController countryController = new();
             do
             {
-                countryController.WelcomeAction(); 
+                countryController.WelcomeAction();
             } while(Validator.Continue());
         }
     }

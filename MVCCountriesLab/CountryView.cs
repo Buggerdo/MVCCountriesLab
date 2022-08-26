@@ -6,7 +6,6 @@
         {
             DisplayCountry = country;
         }
-
         public Country DisplayCountry { get; set; }
 
         public void Display()

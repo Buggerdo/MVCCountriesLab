@@ -9,7 +9,6 @@
 
         public List<Country> Countries { get; set; }
 
-
         /// <summary>
         /// Print the name of each country in the list along with the index for each country
         /// </summary>
