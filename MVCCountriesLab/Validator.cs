@@ -2,6 +2,10 @@
 {
     public static class Validator
     {
+        /// <summary>
+        /// Asks the user if they would like to continue
+        /// </summary>
+        /// <returns></returns>
         public static bool Continue()
         {
             Console.WriteLine("Press any key to continue.");
