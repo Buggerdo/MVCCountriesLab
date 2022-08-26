@@ -4,28 +4,36 @@
     {
         List<Country> CountryDb = new()
         {
-            new Country("USA", "North America",new List<string> {"Red", "White", "blue" }),
-            new Country("Canada", "North America",new List<string> {"Red", "White" })
+            new Country("USA", Continent.North_America,new List<string> {"Red", "White", "blue" }),
+            new Country("Canada", Continent.North_America,new List<string> {"Red", "White" })
         };
 
         public void CountryAction(Country c)
         {
             CountryView country = new(c);
+            country.Display();
         }
 
-        /// <summary>
-        /// This will take no parameter and pass CountryDb into the CountryListView class. Then, it will print “Hello, welcome to the country app. Please select a country from the following list:” Then it will call Display() on the CountryListView. Next allow the user to select a country by index.Upon getting the country out of CountryDb, pass that country along to the CountryAction() method. After that’s done, ask if the user would like to learn about another country.
-        /// </summary>
         public void WelcomeAction()
         {
             CountryListView countryListView = new(CountryDb);
-            Console.WriteLine("Hello, welcome to the country app. Please select a country from the following list:");
-            countryListView.Display();        
+            Console.WriteLine("Hello, welcome to the country app.");
+            countryListView.Display();
+            int index = GetSelection();
+            CountryAction(CountryDb[index - 1]);
         }
 
         public int GetSelection()
         {
-            return int.Parse(Console.ReadLine());
+            do
+            {
+                Console.Write(" Please select a country from the above list: ");
+                string userinput = Console.ReadLine();
+                if(int.TryParse(userinput, out int index) && index < CountryDb.Count + 1 && index > 0)
+                    return index;
+                Console.WriteLine("Sorry that is not a valid section.");
+            } while(true);
         }
+
     }
 }
