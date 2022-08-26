@@ -2,7 +2,6 @@
 {
     public class CountryController
     {
-        string filePath = "CountriesDb.txt";
 
         public CountryController()
         {
@@ -10,22 +9,26 @@
         }
 
         List<Country> CountryDb = new();
-            //new Country("USA", Continent.North_America,new List<string> {"Red", "White", "blue" }),
-            //new Country("Canada", Continent.North_America,new List<string> {"Red", "White" })
-
-
-        //load the countries from the file into the CountryDb list
+  
+        /// <summary>
+        /// Loads countries from Db
+        /// </summary>
         public void LoadCountries()
         {
-            StreamReader sr = new(filePath);
+            StreamReader sr = new("CountriesDb.txt");
             while(!sr.EndOfStream)
             {
                 string line = sr.ReadLine();
                 string[] columns = line.Split(',');
                 CountryDb.Add(new Country(columns[0], (Continent)Enum.Parse(typeof(Continent), columns[1]), columns[2].Split(' ').ToList()));
             }
+            sr.Close();
         }
 
+        /// <summary>
+        /// Starts a new CountryView
+        /// </summary>
+        /// <param name="c"></param>
         public void CountryAction(Country c)
         {
             CountryView country = new(c);
@@ -53,9 +56,8 @@
         {
             do
             {
-                Console.Write(" Please select a country from the above list: ");
-                string userinput = Console.ReadLine();
-                if(int.TryParse(userinput, out int index) && index < CountryDb.Count + 1 && index > 0)
+                Console.Write("Please select a country from the above list: ");
+                if(int.TryParse(Console.ReadLine(), out int index) && index < CountryDb.Count + 1 && index > 0)
                     return index;
                 Console.WriteLine("Sorry that is not a valid section.");
             } while(true);

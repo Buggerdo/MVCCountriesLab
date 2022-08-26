@@ -12,8 +12,7 @@
             Console.ReadKey();
             Console.Clear();
             Console.Write("Would you like learn about another country? (y/n): ");
-            string userinput = Console.ReadLine();
-            if("yes".StartsWith(userinput.ToLower()))
+            if("yes".StartsWith(Console.ReadLine().ToLower()))
                 return true;
             else
                 return false;

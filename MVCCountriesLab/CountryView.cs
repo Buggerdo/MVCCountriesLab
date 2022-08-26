@@ -15,17 +15,20 @@
         /// </summary>
         public void Display()
         {
-            string colors = string.Join(", ", DisplayCountry.Colors);
             Console.Clear();
             Console.ForegroundColor = NextColor();
             Console.WriteLine($"{DisplayCountry.Name}");
             Console.ForegroundColor = NextColor();
-            Console.WriteLine($"{DisplayCountry.Continent}");
+            Console.WriteLine($"{DisplayCountry.Continent.ToString().Replace('_', ' ')}");
             Console.ForegroundColor = NextColor();
-            Console.WriteLine($"{colors}");
+            Console.WriteLine($"{string.Join(", ", DisplayCountry.Colors)}");
             Console.ResetColor();
         }
 
+        /// <summary>
+        /// Get the next color from the country color
+        /// </summary>
+        /// <returns></returns>
         private ConsoleColor NextColor()
         {
             if(currentColor < DisplayCountry.Colors.Count - 1) currentColor++;
