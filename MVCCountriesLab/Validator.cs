@@ -5,7 +5,7 @@
         /// <summary>
         /// Asks the user if they would like to continue
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if user wants to continue</returns>
         public static bool Continue()
         {
             Console.WriteLine("Press any key to continue.");

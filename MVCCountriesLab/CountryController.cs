@@ -2,22 +2,28 @@
 {
     public class CountryController
     {
-
+        /// <summary>
+        /// Private constructor for singleton pattern
+        /// </summary>
         private CountryController()
         {
             LoadCountries();
             CountryDb = CountryDb.OrderBy(c => c.Name).ToList();
         }
 
+        private static CountryController _countryController = new();
+
+        List<Country> CountryDb = new();
+
+        /// <summary>
+        /// Returns instance of controller
+        /// </summary>
+        /// <returns></returns>
         public static CountryController GetController()
         {
             return _countryController;
         }
 
-        private static CountryController _countryController = new();
-
-        List<Country> CountryDb = new();
-  
         /// <summary>
         /// Loads countries from Db
         /// </summary>
@@ -58,7 +64,7 @@
         /// <summary>
         /// Gets the user selection
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Index of county user selected</returns>
         public int GetSelection()
         {
             do
